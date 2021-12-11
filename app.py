@@ -1,11 +1,12 @@
 from flask import Flask, render_template
 
-#INSERT import of blueprints from controllers here
-
+from controllers.places_controller import places_blueprint
+from controllers.purchases_controller import purchases_blueprint
 
 app = Flask(__name__)
 
-#INSERT app.register_blueprint here
+app.register_blueprint(places_blueprint)
+app.register_blueprint(purchases_blueprint)
 
 @app.route("/")
 def main():
