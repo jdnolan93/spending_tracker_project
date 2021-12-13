@@ -1,3 +1,4 @@
+from unittest import result
 from db.run_sql import run_sql
 
 from models.place import Place
@@ -22,3 +23,12 @@ def select_all():
         places.append(place)
     return places
 
+def select(id):
+    place = None
+    sql = "SELECT * FROM places WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        place = Place(result['place_name'], result['id'])
+    return place
