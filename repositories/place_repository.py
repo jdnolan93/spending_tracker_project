@@ -10,3 +10,15 @@ def save(place):
     id = results [0] ['id']
     place.id = id
     return place
+
+def select_all():
+    places = []
+
+    sql = "SELECT * FROM places"
+    results = run_sql(sql)
+
+    for row in results:
+        place = Place(row['place_name'], row['id'])
+        places.append(place)
+    return places
+
