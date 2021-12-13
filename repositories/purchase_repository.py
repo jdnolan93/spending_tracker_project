@@ -24,3 +24,14 @@ def select_all():
         purchases.append(purchase)
     return purchases
 
+def select(id):
+    purchase = None
+    sql = "SELECT * FROM purchases WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        place = place_repository.select(result['place_id'])
+        purchase = Purchase(result['item_name'], result['price'], place, result['id'] )
+    return purchase
+
