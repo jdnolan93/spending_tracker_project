@@ -35,3 +35,6 @@ def select(id):
         purchase = Purchase(result['item_name'], result['price'], place, result['id'] )
     return purchase
 
+def delete_all():
+    sql = "DELETE  FROM purchases"
+    run_sql(sql)
