@@ -36,3 +36,8 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM places"
     run_sql(sql)
+
+def update(place):
+    sql = "UPDATE places SET (place_name) = (%s) WHERE id = %s"
+    values = [place.place_name, place.id]
+    run_sql(sql, values)
