@@ -1,5 +1,10 @@
 import unittest
-
 from models.purchase import Purchase
 
-class TestTask(unittest.TestCase):
+class TestPurchase(unittest.TestCase):
+
+    def setUp(self):
+        self.purchase = Purchase("hat", "3.33", "Woolworths")
+
+    def test_if_has_name(self):
+        self.assertEqual("hat", self.purchase.item_name)
