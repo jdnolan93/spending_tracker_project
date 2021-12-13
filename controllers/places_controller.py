@@ -5,3 +5,8 @@ import repositories.place_repository as place_repository
 import repositories.purchase_repository as purchase_repository
 
 places_blueprint = Blueprint("places", __name__)
+
+@places_blueprint.route("/places")
+def places():
+    places = place_repository.select_all()
+    return render_template("places/index.html", all_places = places)
