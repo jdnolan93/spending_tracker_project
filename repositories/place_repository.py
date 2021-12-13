@@ -32,3 +32,7 @@ def select(id):
     if result is not None:
         place = Place(result['place_name'], result['id'])
     return place
+
+def delete_all():
+    sql = "DELETE FROM places"
+    run_sql(sql)
