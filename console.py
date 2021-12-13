@@ -25,17 +25,17 @@ place_5 = Place("Sainsburys")
 place_repository.save(place_5)
 
 
-purchase_1 = Purchase("Pint", 3.50)
+purchase_1 = Purchase("Pint", 3.50, place_1)
 purchase_repository.save(purchase_1)
 
-purchase_2 = Purchase("Steak Bake", 1.50)
+purchase_2 = Purchase("Steak Bake", 1.50, place_2)
 purchase_repository.save(purchase_2)
 
-purchase_3 = Purchase("Meal Deal", 3.00)
+purchase_3 = Purchase("Meal Deal", 3.00, place_3)
 purchase_repository.save(purchase_3)
 
-purchase_4 = Purchase("Vodka mixer", 1.00)
+purchase_4 = Purchase("Vodka mixer", 1.00, place_4)
 purchase_repository.save(purchase_4)
 
-purchase_5 = Purchase("Irn Bru", 0.85)
+purchase_5 = Purchase("Irn Bru", 0.85, place_5)
 purchase_repository.save(purchase_5)
