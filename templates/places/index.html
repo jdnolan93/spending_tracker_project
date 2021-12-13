@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for place in all_places %}
+<a href="/places/{{place.id}}">{{place.name}}</a>
+{% endfor %}
+{% endblock %}
