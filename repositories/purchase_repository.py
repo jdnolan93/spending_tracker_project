@@ -12,3 +12,15 @@ def save(purchase):
     purchase.id = id
     return purchase
 
+def select_all():
+    purchases = []
+
+    sql = "SELECT * FROM books"
+    results = run_sql(sql)
+
+    for row in results:
+        place = place_repository.select(row['place_id'])
+        purchase = Purchase(row['item_name'], row['price'], place, row['id'])
+        purchases.append(purchase)
+    return purchases
+
