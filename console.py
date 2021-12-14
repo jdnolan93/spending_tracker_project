@@ -10,6 +10,7 @@ import repositories.tag_repository as tag_repository
 
 place_repository.delete_all()
 purchase_repository.delete_all()
+tag_repository.delete_all()
 
 place_1 = Place("The Chanter")
 place_repository.save(place_1)

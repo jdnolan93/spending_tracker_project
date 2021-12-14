@@ -49,3 +49,5 @@ def update(purchase):
     values = [purchase.item_name, purchase.price, purchase.place.id, purchase.id]
     print(values)
     run_sql(sql, values)
+
+#ADD GET TOTAL HERE 

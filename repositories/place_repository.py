@@ -42,14 +42,16 @@ def update(place):
     values = [place.place_name, place.id]
     run_sql(sql, values)
 
-def purchases(place):
-    purchases = []
+# def purchases(place):
+#     purchases = []
 
-    sql = "SELECT * FROM purchases where place_id = %s"
-    values = [place.id]
-    results = run_sql(sql, values)
+#     sql = "SELECT * FROM purchases where place_id = %s"
+#     values = [place.id]
+#     results = run_sql(sql, values)
 
-    for row in results:
-        purchase = Purchase(row['item_name'], row['price'], row['place_id'], row['id'])
-        purchases.append(purchase)
-    return purchases
+#     for row in results:
+#         purchase = Purchase(row['item_name'], row['price'], row['place_id'], row['id'])
+#         purchases.append(purchase)
+#     return purchases
+
+# TO BE REWRITTEN OR DELETED
