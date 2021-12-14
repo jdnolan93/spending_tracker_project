@@ -15,3 +15,13 @@ def save(tag):
     tag.id = id
     return tag
 
+def select_all():
+    tags = []
+
+    sql = "SELECT * FROM tags"
+    results = run_sql(sql)
+
+    for row in results:
+        tag = Tag(row['tag_name'], row['active'], row ['id'])
+        tags.append(tag)
+    return tags
