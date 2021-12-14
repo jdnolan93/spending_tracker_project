@@ -11,3 +11,14 @@ places_blueprint = Blueprint("places", __name__)
 def places():
     places = place_repository.select_all()
     return render_template("places/index.html", places = places)
+
+@places_blueprint.route("/places/new")
+def new_place():
+    return render_template("/places/new.html")
+
+@places_blueprint.route("/places", methods=["POST"])
+def create_place():
+    place_name = request.form["name"]
+    new_place = Place(place_name)
+    place_repository.save(new_place)
+    return redirect("/places")
