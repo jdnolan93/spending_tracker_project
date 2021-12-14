@@ -17,3 +17,16 @@ def new_purchase():
     places = place_repository.select_all()
     tags = tag_repository.select_all()
     return render_template ("/purchases/new.html", places = places, tags = tags)
+
+@purchases_blueprint.route("/purchases", methods=["POST"])
+def create_purchase():
+    place_id = request.form["place_id"]
+    tag_id = request.form["tag_id"]
+    price = request.form["price"]
+
+    place = place_repository.select(place_id)
+    tag = tag_repository.select(tag_id)
+    new_purchase = Purchase(price, place, tag)
+    purchase_repository.save(new_purchase)
+
+    return redirect("/purchases")

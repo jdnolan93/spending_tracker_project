@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add New Purchase</h2>
+
+<form action="/purchases" method="POST">
+    <div>
+        <label for="tag">What did you buy?:</label>
+        <select name="tag_id" id="tag">
+            {% for tag in tags %} 
+            <option value="{{tag.id}}">{{tag.tag_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="place">Where did you buy it?:</label>
+        <select name="place_id" id="place">
+            {% for place in places %} 
+            <option value="{{place.id}}">{{place.place_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        "Add price here"
+    </div>
+    <div>
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
+{%endblock%}
