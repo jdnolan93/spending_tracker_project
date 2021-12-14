@@ -30,6 +30,12 @@ def edit_place(id):
 
 @places_blueprint.route("/places/<id>", methods=["POST"])
 def update_place(id):
-    name = request.form["name"]
-    place = Place(name, id)
+    place_name = request.form["name"]
+    place = Place(place_name, id)
     place_repository.update(place)
+    return redirect("/places")
+
+@places_blueprint.route("/places/<id>/delete", methods=["POST"])
+def delete_place(id):
+    place_repository.delete(id)
+    return redirect("/places")
