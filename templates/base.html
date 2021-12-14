@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>TBA</title>
 </head>
-<body>
-    <header>
-        <h1>INSERT NAME HERE</h1>
+<header class = "front_header">
+    <h1>INSERT NAME HERE</h1>
         <nav>
             <ul class = "menu">
                 <li><a href="/">Home</a></li>
@@ -35,10 +35,10 @@
                 </li>
             </ul>
         </nav>
-    </header>
+</header>
     <div class="container">
     {% block content %}
     {% endblock %}
     </div>
-</body>
+
 </html>

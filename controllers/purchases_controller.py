@@ -32,10 +32,10 @@ def create_purchase():
 
     return redirect("/purchases")
 
-# # @purchases_blueprint("/purchases/<id>/edit")
-# # def edit_purchase(id):
-# #     purchase = purchase_repository.select(id)
-# #     places = place_repository.select_all()
-# #     tags = tag_repository.select_all()
+# @purchases_blueprint("/purchases/<id>/edit")
+# def edit_purchase(id):
+#     purchase = purchase_repository.select(id)
+#     places = place_repository.select_all()
+#     tags = tag_repository.select_all()
 #     return render_template("purchases/edit.html", purchase = purchase, places = places, tags = tags) 
-# NEED TO WORK OUT WHY ITS NOT WORKING 
+# # NEED TO WORK OUT WHY ITS NOT WORKING 
