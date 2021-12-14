@@ -10,4 +10,4 @@ places_blueprint = Blueprint("places", __name__)
 @places_blueprint.route("/places")
 def places():
     places = place_repository.select_all()
-    return render_template("places/index.html", all_places = places)
+    return render_template("places/index.html", places = places)

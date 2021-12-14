@@ -7,12 +7,11 @@ import repositories.place_repository as place_repository
 import repositories.tag_repository as tag_repository
 
 def save(purchase):
-    sql = "INSERT INTO purchases (price, place_id, tag_id) VALUES (%s, %s, %s) RETURNING *"
+    sql = "INSERT INTO purchases (price, place_id, tag_id) VALUES (%s, %s, %s) RETURNING id"
     values = [purchase.price, purchase.place.id, purchase.tag.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     purchase.id = id
-    return purchase
     #I think there's an issue here
 
 def select_all():
