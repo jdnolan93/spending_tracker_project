@@ -2,15 +2,18 @@ from db.run_sql import run_sql
 
 from models.place import Place
 from models.purchase import Purchase
+from models.tag import Tag
 import repositories.place_repository as place_repository
+import repositories.tag_repository as tag_repository
 
 def save(purchase):
-    sql = "INSERT INTO purchases (item_name, price, place_id) VALUES (%s, %s, %s) RETURNING *"
-    values = [purchase.item_name, purchase.price, purchase.place.id]
+    sql = "INSERT INTO purchases (price, place_id, tag_id) VALUES (%s, %s, %s) RETURNING *"
+    values = [purchase.price, purchase.place.id, purchase.tag.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     purchase.id = id
     return purchase
+    #I think there's an issue here
 
 def select_all():
     purchases = []
@@ -20,7 +23,8 @@ def select_all():
 
     for row in results:
         place = place_repository.select(row['place_id'])
-        purchase = Purchase(row['item_name'], row['price'], place, row['id'])
+        tag = tag_repository.select(row['tag_id']) #I think there's an issue here
+        purchase = Purchase(row['price'], place, tag, row['id'])
         purchases.append(purchase)
     return purchases
 
@@ -32,7 +36,8 @@ def select(id):
 
     if result is not None:
         place = place_repository.select(result['place_id'])
-        purchase = Purchase(result['item_name'], result['price'], place, result['id'] )
+        tag = tag_repository.select(result['tag_id']) #I think there's an issue here
+        purchase = Purchase(result['price'], place, tag, result['id'] )
     return purchase
 
 def delete_all():
