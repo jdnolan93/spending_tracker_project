@@ -34,3 +34,8 @@ def update_tag(id):
     tag = Tag(tag_name, id)
     tag_repository.update(tag)
     return redirect("/tags")
+
+@tags_blueprint.route("/tags/<id>/delete", methods=["POST"])
+def delete_tag(id):
+    tag_repository.delete(id)
+    return redirect("/tags")
