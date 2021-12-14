@@ -15,7 +15,7 @@ CREATE TABLE tags(
 
 CREATE TABLE purchases(
     id SERIAL PRIMARY KEY,
-    price FLOAT(2),
+    price FLOAT,
     place_id INT REFERENCES places(id) ON DELETE CASCADE,
     tag_id INT REFERENCES tags(id) ON DELETE CASCADE
 );
