@@ -22,3 +22,14 @@ def create_place():
     new_place = Place(place_name)
     place_repository.save(new_place)
     return redirect("/places")
+
+@places_blueprint.route("/places/<id>/edit")
+def edit_place(id):
+    place = place_repository.select(id)
+    return render_template('places/edit.html', place=place)
+
+@places_blueprint.route("/places/<id>", methods=["POST"])
+def update_place(id):
+    name = request.form["name"]
+    place = Place(name, id)
+    place_repository.update(place)
