@@ -8,7 +8,7 @@ import repositories.purchase_repository as purchase_repository
 import repositories.tag_repository as tag_repository
 
 def save(tag):
-    sql = "INSERT INTO tags (tag_name, active) VALUES (%s, %s,) RETURNING id"
+    sql = "INSERT INTO tags (tag_name, active) VALUES (%s, %s) RETURNING id"
     values = [tag.tag_name, tag.active]
     results = run_sql(sql, values)
     id = results [0]['id']
