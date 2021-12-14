@@ -7,9 +7,38 @@
     <title>TBA</title>
 </head>
 <body>
-    {% block home %}
-    {% endblock %}
+    <header>
+        <h1>INSERT NAME HERE</h1>
+        <nav>
+            <ul class = "menu">
+                <li><a href="/">Home</a></li>
+                <li>
+                    Places
+                    <ul>
+                        <li><a href="/places">View All</a></li>
+                        <li><a href="/places/new">Add</a></li>
+                    </ul>
+                </li>
+                <li>
+                    Tags
+                    <ul>
+                        <li><a href="/tags">View All</a></li>
+                        <li><a href="/tags/new">Add</a></li>
+                    </ul>
+                </li>
+                <li>
+                    Purchases
+                    <ul>
+                        <li><a href="/purchases">View All</a></li>
+                        <li><a href="/purchases/new">Add</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
     {% block content %}
     {% endblock %}
+    </div>
 </body>
 </html>
