@@ -22,3 +22,8 @@ def create_tag():
     new_tag = Tag(tag_name, active=True)
     tag_repository.save(new_tag)
     return redirect("/tags")
+
+@tags_blueprint.route("/tags/<id>/edit")
+def edit_tag(id):
+    tag = tag_repository.select(id)
+    return render_template('tags/edit.html', tag=tag)
