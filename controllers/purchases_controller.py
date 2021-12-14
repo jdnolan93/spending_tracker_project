@@ -11,3 +11,9 @@ purchases_blueprint = Blueprint("purchases", __name__)
 def purchases():
     purchases = purchase_repository.select_all()
     return render_template("purchases/index.html", purchases = purchases)
+
+@purchases_blueprint.route("/purchases/new")
+def new_purchase():
+    places = place_repository.select_all()
+    tags = tag_repository.select_all()
+    return render_template ("/purchases/new.html", places = places, tags = tags)
