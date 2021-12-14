@@ -6,6 +6,8 @@
 {% for purchase in purchases %}
 
 <section>
+    <p>{{purchase.tag.tag_name}}</p>
+    <p>{{purchase.place.place_name}}</p>
     <p>{{purchase.price}}</p>
 <a href="/purchases/"></a>
 
