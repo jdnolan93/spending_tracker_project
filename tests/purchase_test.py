@@ -11,3 +11,6 @@ class TestPurchase(unittest.TestCase):
 
     def test_if_has_place(self):
         self.assertEqual("Tesco", self.purchase.place)
+
+    def test_if_has_tag(self):
+        self.assertEqual("Beans", self.purchase.tag)
