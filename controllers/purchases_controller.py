@@ -6,3 +6,8 @@ import repositories.purchase_repository as purchase_repository
 import repositories.tag_repository as tag_repository
 
 purchases_blueprint = Blueprint("purchases", __name__)
+
+@purchases_blueprint.route("/purchases")
+def purchases():
+    purchases = purchase_repository.select_all()
+    return render_template("purchases/index.html", purchases = purchases)
