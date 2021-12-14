@@ -17,7 +17,7 @@ def save(purchase):
 def select_all():
     purchases = []
 
-    sql = "SELECT * FROM books"
+    sql = "SELECT * FROM purchases"
     results = run_sql(sql)
 
     for row in results:
