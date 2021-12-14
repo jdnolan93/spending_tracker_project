@@ -26,7 +26,7 @@ def create_place():
 @places_blueprint.route("/places/<id>/edit")
 def edit_place(id):
     place = place_repository.select(id)
-    return render_template('places/edit.html', place=place)
+    return render_template("places/edit.html", place=place)
 
 @places_blueprint.route("/places/<id>", methods=["POST"])
 def update_place(id):
