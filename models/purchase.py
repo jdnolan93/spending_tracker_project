@@ -3,5 +3,5 @@ class Purchase:
         self.item_name=item_name
         self.price=price
         self.place=place
-        id=None
+        self.id=id
 
