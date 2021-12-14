@@ -25,3 +25,13 @@ def select_all():
         tag = Tag(row['tag_name'], row['active'], row ['id'])
         tags.append(tag)
     return tags
+
+def select(id):
+    tag = None
+    sql = "SELECT * FROM tags WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        tag = Tag(result['tag_name'], result['active'], result['id'])
+    return tag
