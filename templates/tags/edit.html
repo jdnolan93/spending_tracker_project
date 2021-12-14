@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update Tag</h2>
+
+<form action="/tags/{{ tag.id }}" method="POST">
+    <div>
+        <label for="name">Tag Name:</label>
+        <input type="text" name="name" id="name" value="{{ tag.name }}">
+        <input type="submit" value ="Update Tag">
+    </div>
+
+</form>
+
+{% endblock %}

@@ -8,7 +8,9 @@
 <section>
     <p>{{tag.tag_name}}</p>
 <a href="/tags/"></a>
+<a href="/tags/{{ tag.id }}/edit">Edit</a>
 
+<a href="/tags/{{ tag.id }}/delete">Delete</a>
 </section>
 
 {% endfor %}

@@ -30,3 +30,4 @@ def create_purchase():
     purchase_repository.save(new_purchase)
 
     return redirect("/purchases")
+
