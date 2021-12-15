@@ -36,9 +36,9 @@ def delete_all():
     sql = "DELETE FROM places"
     run_sql(sql)
 
-def delete(place):
+def delete(id):
     sql = "DELETE FROM places WHERE id = %s"
-    values = [place.id]
+    values = [id]
     run_sql(sql, values)
 
 def update(place):

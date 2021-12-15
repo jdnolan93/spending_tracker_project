@@ -8,8 +8,8 @@
 <section class="tag_place_results">
     <p>{{place.place_name}}</p>
     <a href="/places/{{ place.id }}/edit" class="edit_button">Edit</a>
-
-    <a href="/places/{{ place.id }}/delete" class="delete_button">Delete </a>
+    <form action="/places/{{ place.id }}/delete" method="POST"><button class="delete_button">Delete</button></form>
+    
 
 </section>
 

@@ -41,4 +41,9 @@ def edit_purchase(id):
     tags = tag_repository.select_all()
     return render_template("purchases/edit.html", purchase = purchase, places = places, tags = tags) 
 
+@purchases_blueprint.route("/purchases/<id>/delete", methods=["POST"])
+def delete_purchase(id):
+    purchase_repository.delete(id)
+    return redirect("/purchases")
+
 
