@@ -10,7 +10,6 @@ CREATE TABLE places(
 CREATE TABLE tags(
     id SERIAL PRIMARY KEY, 
     tag_name VARCHAR(255),
-    active BOOLEAN
 );
 
 CREATE TABLE purchases(
