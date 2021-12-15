@@ -10,9 +10,8 @@ purchases_blueprint = Blueprint("purchases", __name__)
 
 @purchases_blueprint.route("/purchases")
 def purchases():
-    pre_total = purchase_repository.total_amount()
+    total = purchase_repository.total_amount()
     purchases = purchase_repository.select_all()
-    total = round(pre_total, 2)
     return render_template("purchases/index.html", purchases = purchases, total=total)
 
 @purchases_blueprint.route("/purchases/new")
@@ -26,12 +25,10 @@ def create_purchase():
     place_id = request.form["place_id"]
     tag_id = request.form["tag_id"]
     price = request.form["price"]
-
     place = place_repository.select(place_id)
     tag = tag_repository.select(tag_id)
     new_purchase = Purchase(price, place, tag)
     purchase_repository.save(new_purchase)
-
     return redirect("/purchases/index.html")
 
 @purchases_blueprint.route("/purchases/<id>/edit")

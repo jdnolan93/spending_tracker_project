@@ -8,12 +8,12 @@ import repositories.place_repository as place_repository
 import repositories.tag_repository as tag_repository
 
 def save(purchase):
-    sql = "INSERT INTO purchases (price, place_id, tag_id) VALUES (%s, %s, %s) RETURNING id"
+    sql = "INSERT INTO (purchases price, place_id, tag_id) VALUES (%s, %s, %s) RETURNING id"
     values = [purchase.price, purchase.place.id, purchase.tag.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     purchase.id = id
-    #I think there's an issue here
+
 
 def select_all():
     purchases = []
@@ -23,7 +23,7 @@ def select_all():
 
     for row in results:
         place = place_repository.select(row['place_id'])
-        tag = tag_repository.select(row['tag_id']) #I think there's an issue here
+        tag = tag_repository.select(row['tag_id']) 
         purchase = Purchase(row['price'], place, tag, row['id'])
         purchases.append(purchase)
     return purchases
@@ -55,7 +55,6 @@ def update(purchase):
     print(values)
     run_sql(sql, values)
 
-#ADD GET TOTAL HERE 
 
 def total_amount():
     total = 0
@@ -67,3 +66,4 @@ def total_amount():
         total += amount
 
     return total
+

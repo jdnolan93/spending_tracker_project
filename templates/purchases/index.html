@@ -15,7 +15,7 @@
     <div class = "purchase_form">Location</div> {{purchase.place.place_name}}
     <div class = "purchase_form">Price</div> £{{"%.2f"|format(purchase.price)}}
     <a href="/purchases/{{ purchase.id }}/edit" class = "edit_button">Edit</a>
-    <a href="/purchases/{{ purchase.id }}/delete" class="delete_button">Delete </a>
+    <form action="/purchases/{{ purchase.id }}/delete" method="POST"><button class="delete_button">Delete</button></form>
     <br>
 </section>
 
