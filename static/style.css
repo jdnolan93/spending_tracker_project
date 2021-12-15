@@ -2,11 +2,28 @@ body{
     background: rgb(24,14,112);
     background: linear-gradient(0deg, rgba(24,14,112,1) 0%, rgba(0,0,0,1) 62%); 
     font-family: Arial, Helvetica, sans-serif;
-    color: aqua
+    color: aqua;
+    display: flex;
+    flex-direction: column;
+
 };
 
+.site_title{
+    color:springgreen;
+    display: flex;
+    justify-content: center;
+};
 
+.menu{
+    display: flex;
+    justify-content: center;
+};
 
+h2{
+    color: tomato;
+}
 
-
-
+ul{
+    list-style-type: none;
+    color: springgreen;
+}
