@@ -21,13 +21,13 @@ place_repository.save(place_2)
 place_3 = Place("Tesco")
 place_repository.save(place_3)
 
-tag_1 = Tag("Pint", True)
+tag_1 = Tag("Pint")
 tag_repository.save(tag_1)
 
-tag_2 = Tag("Steak Bake", False)
+tag_2 = Tag("Steak Bake")
 tag_repository.save(tag_2)
 
-tag_3 = Tag("Meal Deal", False)
+tag_3 = Tag("Meal Deal")
 tag_repository.save(tag_3)
 
 purchase_1 = Purchase(3.50, place_1, tag_1)
