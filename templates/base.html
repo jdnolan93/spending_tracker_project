@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Permanent+Marker&display=swap" rel="stylesheet"> 
     <title>TBA</title>
 </head>
 <header>
-    <div class = "site_title"> <h1>INSERT NAME HERE</h1> </div>
+    <div class = "site_title"> <h1>INSERT TITLE</h1> </div>
         <nav>
+            <div class = header_buttons></div>
             <ul class = "menu">
                 <li><a href="/" class="button">Home</a></li>
-                <div class = header_buttons></div>
                 <li>
                     <ul>
                         <li><a href="/places" class="button">View All Locations</a></li>
@@ -32,17 +35,21 @@
                         <li><a href="/purchases" class="button">View All Purchases</a></li>
                         <!-- <li><a href="/purchases/new">Add</a></li> -->
                     </ul>
-                </div>
+                
                 </li>
             </ul>
+            </div>
         </nav>
 </header>
 <main>
+    <div class = add_buttons>
     <li><a href="/tags/new" class="button">Add Tag</a></li>
     <li><a href="/places/new" class="button">Add Location</a></li>
+    </div>
     <div class="container">
     {% block content %}
     {% endblock %}
     </div>
 </main>
+
 </html>

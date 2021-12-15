@@ -30,7 +30,7 @@ def create_purchase():
     new_purchase = Purchase(price, place, tag)
     purchase_repository.save(new_purchase)
 
-    return redirect("/purchases")
+    return redirect("/purchases/index.html")
 
 # @purchases_blueprint("/purchases/<id>/edit")
 # def edit_purchase(id):

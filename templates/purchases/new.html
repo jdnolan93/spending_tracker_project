@@ -4,8 +4,9 @@
 <h2>Add New Purchase</h2>
 
 <form action="/purchases" method="POST">
+    <section class = "input_form_purchase">
     <div>
-        <label for="tag">What did you buy?:</label>
+        <label for="tag">Tag:</label>
         <select name="tag_id" id="tag">
             {% for tag in tags %} 
             <option value="{{tag.id}}">{{tag.tag_name}}</option>
@@ -13,7 +14,7 @@
         </select>
     </div>
     <div>
-        <label for="place">Where did you buy it?:</label>
+        <label for="place">Location:</label>
         <select name="place_id" id="place">
             {% for place in places %} 
             <option value="{{place.id}}">{{place.place_name}}</option>
@@ -22,11 +23,10 @@
     </div>
     <div>
         <label for="price">Price:</label>
-        <input type="number" name="price" id="price" step="any"> #Work out how to show to 2 decimal places
-    </div>
-    <div>
+        <input type="number" name="price" id="price" step="any"> 
         <input type="submit" value="Submit">
     </div>
+    </section>
 </form> 
 
 {%endblock%}
