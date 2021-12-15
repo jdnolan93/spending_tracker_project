@@ -1,29 +1,29 @@
 body{
-    background: rgb(24,14,112);
-    background: linear-gradient(0deg, rgba(24,14,112,1) 0%, rgba(0,0,0,1) 62%); 
+    background: rgb(0,41,107);
+    background: radial-gradient(circle, rgba(0,41,107,1) 0%, rgba(0,0,0,1) 100%);
     font-family: Arial, Helvetica, sans-serif;
-    color: aqua;
+    color: #41EAD4;
     display: flex;
     flex-direction: column;
 
-};
-
-.site_title{
-    color:springgreen;
-    display: flex;
-    justify-content: center;
-};
-
-.menu{
-    display: flex;
-    justify-content: center;
-};
-
-h2{
-    color: tomato;
 }
 
 ul{
     list-style-type: none;
-    color: springgreen;
+}
+
+a {
+    color: #FF206E;
+}
+
+.button {
+    font: bold 11px Helvetica;
+    text-decoration: none;
+    background-color: #0C0F0A;
+    color: #FF206E;
+    padding: 2px 6px 2px 6px;
+    border-top: 3px solid #727272;
+    border-right: 3px solid #000000;
+    border-bottom: 3px solid #020202;
+    border-left: 3px solid #727272;
 }
