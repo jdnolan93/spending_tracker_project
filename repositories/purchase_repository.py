@@ -8,7 +8,7 @@ import repositories.place_repository as place_repository
 import repositories.tag_repository as tag_repository
 
 def save(purchase):
-    sql = "INSERT INTO (purchases price, place_id, tag_id) VALUES (%s, %s, %s) RETURNING id"
+    sql = "INSERT INTO purchases(price, place_id, tag_id) VALUES (%s, %s, %s) RETURNING id"
     values = [purchase.price, purchase.place.id, purchase.tag.id]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -50,7 +50,7 @@ def delete(id):
     run_sql(sql, values)
 
 def update(purchase):
-    sql = "UPDATE purchases SET price, place_id, tag_id = %s, %s, %s WHERE id = %s"
+    sql = "UPDATE purchases SET (price, place_id, tag_id) = (%s, %s, %s) WHERE id = %s"
     values = [purchase.price, purchase.place.id, purchase.tag.id, purchase.id]
     print(values)
     run_sql(sql, values)

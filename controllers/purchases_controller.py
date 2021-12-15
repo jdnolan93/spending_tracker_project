@@ -29,7 +29,7 @@ def create_purchase():
     tag = tag_repository.select(tag_id)
     new_purchase = Purchase(price, place, tag)
     purchase_repository.save(new_purchase)
-    return redirect("/purchases/index.html")
+    return redirect("/purchases")
 
 @purchases_blueprint.route("/purchases/<id>/edit")
 def edit_purchase(id):
