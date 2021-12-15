@@ -103,7 +103,8 @@ maybe remove this  */
 }
 
 .purchase_form{
-    color: rgb(255, 255, 255);
-    padding-bottom: 1%;
+    color: #ffffff;
+    text-decoration: underline;
+    padding-bottom: 2%;
     padding-top: 3%;
 }

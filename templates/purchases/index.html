@@ -3,13 +3,17 @@
 
 <h2>Purchases</h2>
 
+<header>
+    <h3>Total Amount Spent: {{ "total" }}</h3>
+</header>
+
 {% for purchase in purchases %}
 
 <section class = purchase_box>
     <a href="/purchases/"></a>
-    <div class = "purchase_form">You bought</div> {{purchase.tag.tag_name}}
-    <div class = "purchase_form">At</div> {{purchase.place.place_name}}
-    <div class = "purchase_form">Costing</div> {{purchase.price}}
+    <div class = "purchase_form">Tag</div> {{purchase.tag.tag_name}}
+    <div class = "purchase_form">Location</div> {{purchase.place.place_name}}
+    <div class = "purchase_form">Price</div> {{purchase.price}}
     <br>
 
 

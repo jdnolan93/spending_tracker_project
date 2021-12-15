@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
-from controllers.places_controller import places
+# from controllers.places_controller import places
 from models.purchase import Purchase
 import repositories.place_repository as place_repository
 import repositories.purchase_repository as purchase_repository
@@ -39,3 +39,4 @@ def create_purchase():
 #     tags = tag_repository.select_all()
 #     return render_template("purchases/edit.html", purchase = purchase, places = places, tags = tags) 
 # # NEED TO WORK OUT WHY ITS NOT WORKING 
+

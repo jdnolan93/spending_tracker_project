@@ -1,3 +1,4 @@
+from controllers.purchases_controller import purchases
 from db.run_sql import run_sql
 
 from models.place import Place
@@ -55,3 +56,15 @@ def update(purchase):
     run_sql(sql, values)
 
 #ADD GET TOTAL HERE 
+
+def total_amount():
+    total = []
+    sql = "SELECT * FROM purchases"
+    results = run_sql(sql)
+
+    for row in results:
+        place = place_repository.select(row['place_id'])
+        tag = tag_repository.select(row['tag_id'])
+        purchase = Purchase(row['price'], place, tag, row['id'])
+        total.append(purchase)
+        return total
