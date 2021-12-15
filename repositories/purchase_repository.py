@@ -58,13 +58,12 @@ def update(purchase):
 #ADD GET TOTAL HERE 
 
 def total_amount():
-    total = []
+    total = 0
     sql = "SELECT * FROM purchases"
     results = run_sql(sql)
 
     for row in results:
-        place = place_repository.select(row['place_id'])
-        tag = tag_repository.select(row['tag_id'])
-        purchase = Purchase(row['price'], place, tag, row['id'])
-        total.append(purchase)
-        return total
+        amount = float(row['price'])
+        total += amount
+
+    return total
