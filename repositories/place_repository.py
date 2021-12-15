@@ -36,26 +36,16 @@ def delete_all():
     sql = "DELETE FROM places"
     run_sql(sql)
 
-def delete():
+def delete(place):
     sql = "DELETE FROM places WHERE id = %s"
-    values = [id]
+    values = [place.id]
     run_sql(sql, values)
 
 def update(place):
-    sql = "UPDATE places SET (place_name) = (%s) WHERE id = %s"
+    sql = "UPDATE places SET place_name = %s WHERE id = %s"
     values = [place.place_name, place.id]
     run_sql(sql, values)
 
-# def purchases(place):
-#     purchases = []
 
-#     sql = "SELECT * FROM purchases where place_id = %s"
-#     values = [place.id]
-#     results = run_sql(sql, values)
 
-#     for row in results:
-#         purchase = Purchase(row['item_name'], row['price'], row['place_id'], row['id'])
-#         purchases.append(purchase)
-#     return purchases
-
-# TO BE REWRITTEN OR DELETED
+#delete - pass something in

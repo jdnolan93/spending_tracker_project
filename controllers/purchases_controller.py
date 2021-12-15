@@ -10,8 +10,9 @@ purchases_blueprint = Blueprint("purchases", __name__)
 
 @purchases_blueprint.route("/purchases")
 def purchases():
-    total = purchase_repository.total_amount()
+    pre_total = purchase_repository.total_amount()
     purchases = purchase_repository.select_all()
+    total = round(pre_total, 2)
     return render_template("purchases/index.html", purchases = purchases, total=total)
 
 @purchases_blueprint.route("/purchases/new")
