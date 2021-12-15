@@ -10,7 +10,7 @@
 <a href="/tags/"></a>
 <a href="/tags/{{ tag.id }}/edit" class = "edit_button">Edit</a>
 
-<a href="/tags/{{ tag.id }}/delete" class = "delete_button">Delete</a>
+<form action="/tags/{{ tag.id }}/delete" method="POST"><button class="delete_button">Delete</button></form>
 </section>
 
 {% endfor %}
