@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Vendors</h2>
+<h2>Locations</h2>
 
 {% for place in places %}
 
-<section>
+<section class="tag_place_results">
     <p>{{place.place_name}}</p>
-    <a href="/places/{{ place.id }}/edit">Edit</a>
+    <a href="/places/{{ place.id }}/edit" class="edit_button">Edit</a>
 
-    <a href="/places/{{ place.id }}/delete">Delete</a>
+    <a href="/places/{{ place.id }}/delete" class="delete_button">Delete </a>
 
 </section>
 

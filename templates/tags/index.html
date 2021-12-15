@@ -5,12 +5,12 @@
 
 {% for tag in tags %}
 
-<section>
+<section class = "tag_place_results">
     <p>{{tag.tag_name}}</p>
 <a href="/tags/"></a>
-<a href="/tags/{{ tag.id }}/edit">Edit</a>
+<a href="/tags/{{ tag.id }}/edit" class = "edit_button">Edit</a>
 
-<a href="/tags/{{ tag.id }}/delete">Delete</a>
+<a href="/tags/{{ tag.id }}/delete" class = "delete_button">Delete</a>
 </section>
 
 {% endfor %}

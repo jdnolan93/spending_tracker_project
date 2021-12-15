@@ -1,6 +1,5 @@
 body{
-    background: rgb(0,41,107);
-    background: radial-gradient(circle, rgba(0,41,107,1) 0%, rgba(0,0,0,1) 100%);
+    background: rgb(0, 15, 38);
     font-family: Arial, Helvetica, sans-serif;
     color: #41EAD4;
     display: flex;
@@ -16,14 +15,95 @@ a {
     color: #FF206E;
 }
 
+header{
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-flow: column wrap;
+}
+
 .button {
-    font: bold 11px Helvetica;
+    font: bold 17px Helvetica;
     text-decoration: none;
     background-color: #0C0F0A;
     color: #FF206E;
     padding: 2px 6px 2px 6px;
-    border-top: 3px solid #727272;
-    border-right: 3px solid #000000;
-    border-bottom: 3px solid #020202;
-    border-left: 3px solid #727272;
+    border-top: 2px solid #727272;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #020202;
+    border-left: 2px solid #727272;
+}
+
+.edit_button {
+    font: bold 17px Helvetica;
+    text-decoration: none;
+    background-color: #0C0F0A;
+    color: #ffffff;
+    padding: 2px 6px 2px 6px;
+    border-top: 2px solid #727272;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #020202;
+    border-left: 2px solid #727272;
+}
+
+.delete_button{
+    font: bold 17px Helvetica;
+    text-decoration: none;
+    background-color: #0C0F0A;
+    color: #fa0000;
+    padding: 2px 6px 2px 6px;
+    border-top: 2px solid #727272;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #020202;
+    border-left: 2px solid #727272;
+}
+
+.purchase_box{
+    font: bold 20px Helvetica;
+    border-style: dashed;
+    border-color: #FBFF12;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-flow: column wrap;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.purchase_label{
+    font: bold 20px Helvetica;
+    text-decoration: none;
+    color: #FBFF12;
+    padding: 2px 6px 2px 6px;
+    border-style: dotted;
+}
+
+h2{
+    align-items: center;
+}
+
+/* .header_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+
+} 
+maybe remove this  */
+
+.tag_place_results{
+    font: bold 20px Helvetica;
+    border-style: dashed;
+    border-color: #FBFF12;
+
+    justify-content: center;  
+    padding-bottom: 5%;
+    padding-left: 40%;
+    padding-right: 40%;
+}
+
+.purchase_form{
+    color: rgb(255, 255, 255);
+    padding-bottom: 1%;
+    padding-top: 3%;
 }

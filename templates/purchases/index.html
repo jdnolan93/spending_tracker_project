@@ -5,11 +5,13 @@
 
 {% for purchase in purchases %}
 
-<section>
-    <p>{{purchase.tag.tag_name}}</p>
-    <p>{{purchase.place.place_name}}</p>
-    <p>{{purchase.price}}</p>
-<a href="/purchases/"></a>
+<section class = purchase_box>
+    <a href="/purchases/"></a>
+    <div class = "purchase_form">You bought</div> {{purchase.tag.tag_name}}
+    <div class = "purchase_form">At</div> {{purchase.place.place_name}}
+    <div class = "purchase_form">Costing</div> {{purchase.price}}
+    <br>
+
 
 </section>
 
