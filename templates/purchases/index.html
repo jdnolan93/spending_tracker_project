@@ -4,9 +4,8 @@
 <h2>Purchases</h2>
 
 <header>
-    <h3>Total Amount Spent: {{ total }}</h3>
+    <h3>Total Amount Spent: £{{ "%.2f"|format(total) }}</h3>
 </header>
-
 
 {% for purchase in purchases %}
 
@@ -14,10 +13,13 @@
     <a href="/purchases/"></a>
     <div class = "purchase_form">Tag</div> {{purchase.tag.tag_name}}
     <div class = "purchase_form">Location</div> {{purchase.place.place_name}}
-    <div class = "purchase_form">Price</div> £{{purchase.price}}
+    <div class = "purchase_form">Price</div> £{{"%.2f"|format(purchase.price)}}
+    <a href="/purchases/{{ purchase.id }}/edit" class = "edit_button">Edit</a>
     <br>
 </section>
 
 {% endfor %}
 
 {% endblock %}
+
+

@@ -50,7 +50,7 @@ def delete(id):
     run_sql(sql, values)
 
 def update(purchase):
-    sql = "UPDATE purchases SET (price, place_id, tag_id) = (%s, %s, %s) WHERE id = %s"
+    sql = "UPDATE purchases SET price, place_id, tag_id = %s, %s, %s WHERE id = %s"
     values = [purchase.price, purchase.place.id, purchase.tag.id, purchase.id]
     print(values)
     run_sql(sql, values)
