@@ -3,12 +3,12 @@
 
 <h2>Update Purchase</h2>
 
-<!-- <form action="/purchases/{{ purchases.id }}" method="POST">
+<form action="/purchases/{{ purchase.id }}" method="POST">
     <div>
         <label for="tag">Tag:</label>
-        <select name="purchase_id" id="tag">
-            {% for purchase in purchases %} 
-            <option value="{{purchase.id}}">{{purchase.purchase_name}}</option>
+        <select name="tag_id" id="tag">
+            {% for tag in tags %} 
+            <option value="{{tag.id}}">{{tag.tag_name}}</option>
             {% endfor %}
         </select>
     </div>
@@ -26,6 +26,7 @@
         <input type="submit" value="Update Purchase">
     </div>
 
-</form> -->
+</form>
+
 
 {% endblock %}

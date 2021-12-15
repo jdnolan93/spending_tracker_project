@@ -36,7 +36,25 @@ def edit_purchase(id):
     purchase = purchase_repository.select(id)
     places = place_repository.select_all()
     tags = tag_repository.select_all()
-    return render_template("purchases/edit.html", purchase = purchase, places = places, tags = tags) 
+    return render_template("purchases/edit.html", purchase = purchase, places = places, tags = tags)
+
+@purchases_blueprint.route("/purchases/<id>", methods=["POST"])
+def update_puchase(id):
+    place_id = request.form["place_id"]
+    tag_id = request.form["tag_id"]
+    price = request.form["price"]
+    place = place_repository.select(place_id)
+    tag = tag_repository.select(tag_id)
+    update_purchase = Purchase(price, place, tag, id)
+    purchase_repository.update(update_purchase)
+    return redirect("/purchases")
+
+    
+    
+
+
+
+
 
 @purchases_blueprint.route("/purchases/<id>/delete", methods=["POST"])
 def delete_purchase(id):
